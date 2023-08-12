@@ -1,5 +1,6 @@
 # This should be the lightest image.
-FROM python:alpine
+# Using 3.10 because: https://github.com/aziascreations/Youtube-Auto-Archiver/issues/1
+FROM python:3.10-alpine
 
 # Reading the build arguments.
 # * BUID -> Build UID
@@ -15,7 +16,7 @@ RUN apk update && apk upgrade && \
     apk add --no-cache g++ make py3-lxml ffmpeg libxslt-dev libxml2-dev
 
 # Previously used to compile lxml for streamlink.  (Not used for the moment)
-# RUN apk add --no-cache 
+# RUN apk add --no-cache
 
 # Installing required Python packages.
 ADD --chown=$BUID:$BGID ./requirements.txt /app/requirements.txt
