@@ -2,6 +2,9 @@
 # Using 3.10 because: https://github.com/aziascreations/Youtube-Auto-Archiver/issues/1
 FROM python:3.10-alpine
 
+LABEL "org.opencontainers.image.source"="https://github.com/SteffenAuer/Youtube-Auto-Archiver"
+LABEL "org.opencontainers.image.title"="Youtube Auto Archiver"
+
 # Reading the build arguments.
 # * BUID -> Build UID
 # * BGID -> Build GID
